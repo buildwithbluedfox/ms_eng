@@ -19,7 +19,9 @@ export default function Home() {
 
       <nav className="navbar">
         <div className="logo">
-          <h1>MS Engineering</h1>
+          <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <h1>MS Engineering</h1>
+          </Link>
         </div>
         <ul className="nav-links desktop-only">
           <li><Link href="/" className="active">Home</Link></li>

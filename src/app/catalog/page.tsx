@@ -72,7 +72,9 @@ function CatalogContent() {
       {/* --- Catalog Navbar --- */}
       <nav className="catalog-navbar">
         <div className="logo">
-          <h1>MS Engineering</h1>
+          <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <h1>MS Engineering</h1>
+          </Link>
         </div>
         
         {/* Desktop Links */}
@@ -119,14 +121,22 @@ function CatalogContent() {
             <h1 className="catalog-title">Equipment Catalog</h1>
           </div>
           <div className="catalog-search-filters">
-            <div className="search-bar">
+            <div className="search-bar" style={{ position: 'relative' }}>
               <i className="ri-search-line"></i>
               <input 
                 type="text" 
                 placeholder="Search equipment..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                style={{ paddingRight: searchQuery ? '36px' : '16px' }}
               />
+              {searchQuery && (
+                <i 
+                  className="ri-close-circle-fill" 
+                  onClick={() => setSearchQuery('')}
+                  style={{ position: 'absolute', right: '14px', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer', color: '#cbd5e1', fontSize: '18px' }}
+                ></i>
+              )}
             </div>
             <button className="btn-filters" onClick={() => setIsMobileFilterOpen(true)}>
               <i className="ri-filter-3-line"></i> Filters

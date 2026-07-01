@@ -141,10 +141,17 @@ export default function ProductDetail() {
               placeholder="Search catalog..." 
               value={productSearch}
               onChange={(e) => setProductSearch(e.target.value)}
-              style={{ width: '100%', padding: '12px 16px 12px 42px', borderRadius: '24px', border: '1px solid #e2e8f0', fontSize: '14px', outline: 'none', backgroundColor: '#f8fafc', transition: 'all 0.2s' }}
+              style={{ width: '100%', padding: '12px 36px 12px 42px', borderRadius: '24px', border: '1px solid #e2e8f0', fontSize: '14px', outline: 'none', backgroundColor: '#f8fafc', transition: 'all 0.2s' }}
               onFocus={(e) => { e.target.style.backgroundColor = '#fff'; e.target.style.borderColor = '#cbd5e1'; e.target.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)'; }}
               onBlur={(e) => { e.target.style.backgroundColor = '#f8fafc'; e.target.style.borderColor = '#e2e8f0'; e.target.style.boxShadow = 'none'; }}
             />
+            {productSearch && (
+              <i 
+                className="ri-close-circle-fill" 
+                onClick={(e) => { e.preventDefault(); setProductSearch(''); }}
+                style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer', color: '#cbd5e1', fontSize: '18px' }}
+              ></i>
+            )}
           </form>
         </div>
 
