@@ -378,7 +378,7 @@ export default function AdminDashboard({ initialCatalog, initialQuotes, initialS
                   {topSearches.map((item, index) => (
                     <tr key={index}>
                       <td>#{index + 1}</td>
-                      <td style={{ fontWeight: 600 }}>"{item.query}"</td>
+                      <td style={{ fontWeight: 600 }}>&quot;{item.query}&quot;</td>
                       <td><span className="admin-badge" style={{ backgroundColor: '#fef3c7', color: '#b45309' }}>{item.count}</span></td>
                     </tr>
                   ))}

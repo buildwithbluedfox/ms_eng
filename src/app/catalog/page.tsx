@@ -22,6 +22,7 @@ function CatalogContent() {
   useEffect(() => {
     const s = searchParams.get('search');
     if (s !== null) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSearchQuery(s);
     }
   }, [searchParams]);

@@ -341,7 +341,7 @@ export default function ProductDetail() {
             <div className="qr-header">
               <i className="ri-whatsapp-line whatsapp-icon-large"></i>
               <h3>Enquire on WhatsApp</h3>
-              <p>Scan this QR code with your phone's camera to instantly open WhatsApp and send your inquiry.</p>
+              <p>Scan this QR code with your phone&apos;s camera to instantly open WhatsApp and send your inquiry.</p>
             </div>
 
             <div className="qr-code-box">
