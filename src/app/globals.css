@@ -451,6 +451,14 @@ footer {
     height: 100vh;
     background: rgba(0,0,0,0.5);
     z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-sidebar-overlay.open {
+    opacity: 1;
+    visibility: visible;
 }
 
 .mobile-sidebar {
@@ -465,11 +473,12 @@ footer {
     box-shadow: -10px 0 30px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    animation: slideIn 0.3s ease forwards;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-@keyframes slideIn {
-    from { transform: translateX(100%); }
-    to { transform: translateX(0); }
+
+.mobile-sidebar.open {
+    transform: translateX(0);
 }
 
 .sidebar-close {

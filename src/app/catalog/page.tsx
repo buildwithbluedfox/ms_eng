@@ -95,24 +95,22 @@ function CatalogContent() {
       </nav>
 
       {/* Mobile Nav Sidebar */}
-      {isMobileNavOpen && (
-        <>
-          <div className="mobile-sidebar-overlay" onClick={() => setIsMobileNavOpen(false)}></div>
-          <div className="mobile-sidebar">
-            <button className="sidebar-close" onClick={() => setIsMobileNavOpen(false)}>
-              <i className="ri-close-line"></i>
-            </button>
-            <div className="sidebar-links">
-              <Link href="/">Home</Link>
-              <a href="#" onClick={handleComingSoon}>All</a>
-              <a href="#" className="active-tab">Safari</a>
-              <a href="#" onClick={handleComingSoon}>Boshco</a>
-              <a href="#" onClick={handleComingSoon}>Compare</a>
-              <Link href="/contact" className="btn-contact-orange">Contact Us</Link>
-            </div>
+      <>
+        <div className={`mobile-sidebar-overlay ${isMobileNavOpen ? 'open' : ''}`} onClick={() => setIsMobileNavOpen(false)}></div>
+        <div className={`mobile-sidebar ${isMobileNavOpen ? 'open' : ''}`}>
+          <button className="sidebar-close" onClick={() => setIsMobileNavOpen(false)}>
+            <i className="ri-close-line"></i>
+          </button>
+          <div className="sidebar-links">
+            <Link href="/">Home</Link>
+            <a href="#" onClick={handleComingSoon}>All</a>
+            <a href="#" className="active-tab">Safari</a>
+            <a href="#" onClick={handleComingSoon}>Boshco</a>
+            <a href="#" onClick={handleComingSoon}>Compare</a>
+            <Link href="/contact" className="btn-contact-orange">Contact Us</Link>
           </div>
-        </>
-      )}
+        </div>
+      </>
 
       <main className="catalog-main">
         {/* Header Section */}
@@ -159,33 +157,31 @@ function CatalogContent() {
         </div>
         
         {/* Mobile Filter Sidebar */}
-        {isMobileFilterOpen && (
-          <>
-            <div className="mobile-sidebar-overlay" onClick={() => setIsMobileFilterOpen(false)}></div>
-            <div className="mobile-sidebar filter-sidebar">
-              <div className="sidebar-header">
-                <h3>Filters</h3>
-                <button className="sidebar-close" onClick={() => setIsMobileFilterOpen(false)}>
-                  <i className="ri-close-line"></i>
-                </button>
-              </div>
-              <div className="sidebar-filter-list">
-                {["All Products", "Mini Cranes", "Concrete Mixers", "Material Hoists", "Rebar Equipment", "Compaction"].map(tab => (
-                  <button 
-                    key={tab} 
-                    className={`mobile-filter-btn ${activeTab === tab ? 'active' : ''}`}
-                    onClick={() => {
-                      setActiveTab(tab);
-                      setIsMobileFilterOpen(false);
-                    }}
-                  >
-                    {tab}
-                  </button>
-                ))}
-              </div>
+        <>
+          <div className={`mobile-sidebar-overlay ${isMobileFilterOpen ? 'open' : ''}`} onClick={() => setIsMobileFilterOpen(false)}></div>
+          <div className={`mobile-sidebar filter-sidebar ${isMobileFilterOpen ? 'open' : ''}`}>
+            <div className="sidebar-header">
+              <h3>Filters</h3>
+              <button className="sidebar-close" onClick={() => setIsMobileFilterOpen(false)}>
+                <i className="ri-close-line"></i>
+              </button>
             </div>
-          </>
-        )}
+            <div className="sidebar-filter-list">
+              {["All Products", "Mini Cranes", "Concrete Mixers", "Material Hoists", "Rebar Equipment", "Compaction"].map(tab => (
+                <button 
+                  key={tab} 
+                  className={`mobile-filter-btn ${activeTab === tab ? 'active' : ''}`}
+                  onClick={() => {
+                    setActiveTab(tab);
+                    setIsMobileFilterOpen(false);
+                  }}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          </div>
+        </>
 
         {/* Product Grid */}
         <div className="product-grid">

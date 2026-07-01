@@ -35,22 +35,21 @@ export default function Home() {
       </nav>
 
       {/* Mobile Nav Sidebar */}
-      {isMobileNavOpen && (
-        <>
-          <div className="mobile-sidebar-overlay" onClick={() => setIsMobileNavOpen(false)}></div>
-          <div className="mobile-sidebar">
-            <button className="sidebar-close" onClick={() => setIsMobileNavOpen(false)}>
-              <i className="ri-close-line"></i>
-            </button>
-            <div className="sidebar-links">
-              <Link href="/">Home</Link>
-              <a href="#" onClick={handleComingSoon}>About</a>
-              <a href="#" onClick={handleComingSoon}>Services</a>
-              <a href="#" className="contact-btn" onClick={handleComingSoon}>Contact Us</a>
-            </div>
+      {/* Mobile Nav Sidebar */}
+      <>
+        <div className={`mobile-sidebar-overlay ${isMobileNavOpen ? 'open' : ''}`} onClick={() => setIsMobileNavOpen(false)}></div>
+        <div className={`mobile-sidebar ${isMobileNavOpen ? 'open' : ''}`}>
+          <button className="sidebar-close" onClick={() => setIsMobileNavOpen(false)}>
+            <i className="ri-close-line"></i>
+          </button>
+          <div className="sidebar-links">
+            <Link href="/">Home</Link>
+            <a href="#" onClick={handleComingSoon}>About</a>
+            <a href="#" onClick={handleComingSoon}>Services</a>
+            <a href="#" className="contact-btn" onClick={handleComingSoon}>Contact Us</a>
           </div>
-        </>
-      )}
+        </div>
+      </>
 
       <main className="hero-container">
         <div className="bento-grid">

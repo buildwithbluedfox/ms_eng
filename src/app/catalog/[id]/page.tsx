@@ -169,21 +169,19 @@ export default function ProductDetail() {
       </nav>
 
       {/* Mobile Nav Sidebar */}
-      {isMobileNavOpen && (
-        <>
-          <div className="mobile-sidebar-overlay" onClick={() => setIsMobileNavOpen(false)}></div>
-          <div className="mobile-sidebar">
-            <button className="sidebar-close" onClick={() => setIsMobileNavOpen(false)}>
-              <i className="ri-close-line"></i>
-            </button>
-            <div className="sidebar-links">
-              <Link href="/">Home</Link>
-              <Link href="/catalog">Back to Catalog</Link>
-              <a href="#" className="contact-btn" onClick={handleComingSoon}>Contact Us</a>
-            </div>
+      <>
+        <div className={`mobile-sidebar-overlay ${isMobileNavOpen ? 'open' : ''}`} onClick={() => setIsMobileNavOpen(false)}></div>
+        <div className={`mobile-sidebar ${isMobileNavOpen ? 'open' : ''}`}>
+          <button className="sidebar-close" onClick={() => setIsMobileNavOpen(false)}>
+            <i className="ri-close-line"></i>
+          </button>
+          <div className="sidebar-links">
+            <Link href="/">Home</Link>
+            <Link href="/catalog">Back to Catalog</Link>
+            <a href="#" className="contact-btn" onClick={handleComingSoon}>Contact Us</a>
           </div>
-        </>
-      )}
+        </div>
+      </>
 
       <main className="product-detail-main">
         <div className="product-detail-container">
